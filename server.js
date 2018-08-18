@@ -59,7 +59,10 @@ app.get('/about', (req, res) => {
     res.render('about.hbs', {
         title: 'ABOOT',
     });
+});
 
+app.get('/portfolio', (req,res) => {
+    res.render('portfolio.hbs', {});
 });
 
 app.get('/bad', (req, res) => {
@@ -70,6 +73,6 @@ app.get('/bad', (req, res) => {
 
 
 //3000 is common but not necessary to use.
-app.listen(process.env.PORT, () => {
+app.listen(port, () => {
     console.log('server ready');
 });
