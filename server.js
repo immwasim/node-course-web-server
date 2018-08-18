@@ -2,6 +2,9 @@ const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 
+//heroku environment gvariable to 3000 by default(used by localhost) 
+const port = process.env.PORT || 3000;
+
 var app = express();
 
 hbs.registerPartials(__dirname + '/views/partials');
@@ -67,6 +70,6 @@ app.get('/bad', (req, res) => {
 
 
 //3000 is common but not necessary to use.
-app.listen(3000, () => {
+app.listen(process.env.PORT, () => {
     console.log('server ready');
 });
